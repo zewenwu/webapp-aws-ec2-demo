@@ -1,0 +1,43 @@
+<mxfile host="65bd71144e">
+    <diagram id="Ht1M8jgEwFfnCIfOTk4-" name="Page-1">
+        <mxGraphModel dx="985" dy="802" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="jZVaUwOg5UY3L9NAnvdq-71" value="AWS Cloud" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#232F3E;dashed=0;labelBackgroundColor=none;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="40" width="600" height="360" as="geometry"/>
+                </mxCell>
+                <mxCell id="62ASdKqzcNbD3jh50bKH-13" value="&lt;b&gt;VPC&lt;/b&gt;" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_vpc;strokeColor=#248814;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#AAB7B8;dashed=0;" parent="jZVaUwOg5UY3L9NAnvdq-71" vertex="1">
+                    <mxGeometry x="200" y="40" width="370" height="300" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="RDS: Subnet Group" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=12;fontStyle=0;container=1;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_security_group;grStroke=0;strokeColor=#147EBA;fillColor=#E6F2F8;verticalAlign=top;align=left;spacingLeft=30;fontColor=#147EBA;dashed=0;" parent="62ASdKqzcNbD3jh50bKH-13" vertex="1">
+                    <mxGeometry x="52.5" y="40" width="287.5" height="245" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="" style="group" parent="2" vertex="1" connectable="0">
+                    <mxGeometry x="38" y="40" width="222" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;b&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; RDS: primary database&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;align=left;labelPosition=center;verticalLabelPosition=middle;verticalAlign=top;" parent="21" vertex="1">
+                    <mxGeometry width="222" height="190" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;gradientColor=#4D72F3;gradientDirection=north;fillColor=#3334B9;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.rds;" parent="21" vertex="1">
+                    <mxGeometry width="35" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#2E27AD;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.rds_mariadb_instance;" parent="21" vertex="1">
+                    <mxGeometry x="53.5" y="34" width="48" height="48" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="Security Group" style="sketch=0;aspect=fixed;html=1;points=[];align=center;image;fontSize=12;image=img/lib/mscae/Network_Security_Groups_Classic.svg;fontStyle=1" parent="21" vertex="1">
+                    <mxGeometry x="149.5" y="35" width="34.04" height="46" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="Snapshots" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.snapshot;fillColor=#E05243;gradientColor=none;labelBackgroundColor=none;fontStyle=1" parent="21" vertex="1">
+                    <mxGeometry x="59" y="115" width="37" height="44" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="RDS &lt;br&gt;Consumer Policy" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#3F8624;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=1;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.policy;" parent="jZVaUwOg5UY3L9NAnvdq-71" vertex="1">
+                    <mxGeometry x="70.54999999999998" y="224" width="48.9" height="42" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="Secret Manager:&#10;Master Credentials Secret" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://cloud-icons.onemodel.app/aws/Architecture-Service-Icons_01312023/Arch_Security-Identity-Compliance/64/Arch_AWS-Secrets-Manager_64@5x.png;fontStyle=1" vertex="1" parent="jZVaUwOg5UY3L9NAnvdq-71">
+                    <mxGeometry x="69.99999999999999" y="94" width="50" height="50" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

@@ -1,0 +1,21 @@
+version: 0.1
+resource_type_default_usage:
+  aws_nat_gateway:
+    monthly_data_processed_gb: 10 # Monthly data processed by the NAT Gateway in GB.
+  aws_cloudwatch_log_group:
+    storage_gb: 10 # Total data stored by CloudWatch logs in GB.
+    monthly_data_ingested_gb: 1 # Monthly data ingested by CloudWatch logs in GB.
+    monthly_data_scanned_gb: 2 # Monthly data scanned by CloudWatch logs insights in GB.
+  aws_s3_bucket:
+    object_tags: 100000 # Total object tags. Only for AWS provider V3.
+    standard: # Usages of S3 Standard:
+      storage_gb: 10 # Total storage in GB.
+      monthly_tier_1_requests: 10000 # Monthly PUT, COPY, POST, LIST requests (Tier 1).
+      monthly_tier_2_requests: 10000 # Monthly GET, SELECT, and all other requests (Tier 2).
+      monthly_select_data_scanned_gb: 10 # Monthly data scanned by S3 Select in GB.
+      monthly_select_data_returned_gb: 10 # Monthly data returned by S3 Select in GB.
+  aws_db_instance:
+    additional_backup_storage_gb: 10  # Amount of backup storage used that is in excess of 100% of the storage size for all databases in GB.
+    monthly_standard_io_requests: 10000 # Monthly number of input/output requests for database.
+  aws_secretsmanager_secret:
+    monthly_requests: 10000 # Monthly API requests to Secrets Manager.

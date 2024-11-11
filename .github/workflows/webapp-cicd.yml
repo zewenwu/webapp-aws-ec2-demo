@@ -1,0 +1,43 @@
+name: webapp-cicd
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  id-token: write # This is required for aws oidc connection
+  contents: read # This is required for actions/checkout
+
+env:
+  AWS_ROLE_TO_ASSUME: arn:aws:iam::299641483789:role/webapp-codedeploy-github-role
+  AWS_REGION: us-east-1
+  WEBAPP_DEPLOYMENT_FOLDER: http-webapp-deploy
+  CODEDEPLOY_S3_BUCKET_NAME: webapp-codedeploy-bucket-drce
+  CODEDEPLOY_APPLICATION_NAME: webapp-codedeploy-app
+  CODEDEPLOY_DEPLOYMENT_GROUP_NAME: webapp-codedeploy-deploymentgroup
+
+jobs:
+  deploy-webapp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout github repository
+        uses: actions/checkout@v4
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ env.AWS_ROLE_TO_ASSUME }}
+          aws-region: ${{ env.AWS_REGION }}
+      - name: Zip WebApp Assets
+        run: |
+          zip -r ${{ env.WEBAPP_DEPLOYMENT_FOLDER }}.zip ${{ env.WEBAPP_DEPLOYMENT_FOLDER }}
+      - name: Upload WebApp to S3
+        run: |
+          aws s3 cp ./${{ env.WEBAPP_DEPLOYMENT_FOLDER }}.zip s3://${{ env.CODEDEPLOY_S3_BUCKET_NAME }}/${{ env.WEBAPP_DEPLOYMENT_FOLDER }}.zip
+      - name: Create CodeDeploy Deployment
+        run: |
+          aws deploy create-deployment \
+            --description "Deploying WebApp using GitHub Workflow: webapp-cicd" \
+            --application-name ${{ env.CODEDEPLOY_APPLICATION_NAME }} \
+            --deployment-group-name ${{ env.CODEDEPLOY_DEPLOYMENT_GROUP_NAME }} \
+            --s3-location bucket=${{ env.CODEDEPLOY_S3_BUCKET_NAME }},key=${{ env.WEBAPP_DEPLOYMENT_FOLDER }}.zip,bundleType=zip
